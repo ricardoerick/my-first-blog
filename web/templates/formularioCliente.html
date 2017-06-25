@@ -1,0 +1,72 @@
+{% extends "base4.html" %}
+{% load staticfiles %}
+
+{% block title %}
+Registrar bit&aacute;cora
+{% endblock %}
+
+{% block cuerpo %}
+
+<style type="text/css">
+	td{
+		color: #000;
+	}
+</style>
+
+ <h1>Registro de cliente</h1>
+<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<center>
+			<table  style="border-radius: 15px; border-collapse: separate;
+  							border-spacing:  5px 15px;">
+				<tbody border="2px">
+						<tr >
+							<td >Fecha de Inscripci&oacute;n</td>
+							<td>{{formCliente.FechaInscripcion}}</td>
+							
+							<td>Nombre</td>
+							<td>{{formCliente.NombreCliente}}</td>
+						</tr>
+						<tr>
+							<td>Apellido Paterno:</td>
+							<td>{{formCliente.ApellidoPaterno}}</td> 
+							
+							<td>Apellido Materno</td>
+							<td>{{formCliente.ApellidoMaterno}}</td>
+						</tr>
+						<tr>
+							<td>Direcci&oacute;n</td>
+							<td>{{formCliente.Direccion}}</td>
+							<td>Municipio</td>
+							<td>{{formCliente.Municipio}}</td>
+						</tr>
+						<tr>
+							<td>Numero de Telefono</td>
+							<td>{{formCliente.NumeroTelefono}}</td>
+							<td>Dia de Pago</td>
+							<td>{{formCliente.DiaPago}}</td>
+						</tr>
+						
+						
+						{{usuario_form.last_login.as_hidden}}
+				{{usuario_form.date_joined.as_hidden}}
+					</tbody>
+			</table>
+
+			</center>
+			</br>
+			
+				
+				<button type="submit" class="btn btn-success">
+    <span class="glyphicon glyphicon-floppy-saved"></span> Registrar
+</button>
+
+
+					
+				
+			
+		</form>
+
+
+
+{% endblock cuerpo%}

@@ -1,0 +1,32 @@
+{% extends "base4.html" %}
+{% load staticfiles %}
+
+{% block title %}
+Clientes
+{% endblock %}
+
+{% block cuerpo %}
+
+
+{% if user.is_authenticated  and user.is_superuser == 1 %}
+<h1>Super Usuario</h1>
+
+{%endif%}
+
+{% if user.is_authenticated  and user.tipo_Empleado == "1" %}
+<h1>administrador</h1>
+
+{%endif%}
+
+{% if user.is_authenticated  and user.tipo_Empleado == "2" %}
+<h1>Tecnico</h1>
+
+{%endif%}
+
+{% if user.is_authenticated  and user.tipo_Empleado == "3" %}
+<h1>Cobranza</h1>
+
+{%endif%}
+
+
+{% endblock%}

@@ -1,0 +1,451 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Always force latest IE rendering engine -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Meta Keyword -->
+        <meta name="keywords" content="one page, business template, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
+        <!-- meta character set -->
+        <meta charset="utf-8">
+
+        <!-- Site Title -->
+        <title>WIIVER</title>
+
+
+
+
+        
+        <!--
+        Google Fonts
+        ============================================= -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
+		
+        <!--
+        CSS
+        ============================================= -->
+        <!-- Fontawesome -->
+        <link rel="stylesheet" href="{% static 'publico/css/font-awesome.min.css'%}">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="{% static 'publico/css/bootstrap.min.css'%}">
+        <!-- Fancybox -->
+        <link rel="stylesheet" href="{% static 'publico/css/jquery.fancybox.css'%}">
+        <!-- owl carousel -->
+        <link rel="stylesheet" href="{% static 'publico/css/owl.carousel.css'%}">
+        <!-- Animate -->
+        <link rel="stylesheet" href="{% static 'publico/css/animate.css'%}">
+        <!-- Main Stylesheet -->
+        <link rel="stylesheet" href="{% static 'publico/css/main.css'%}">
+        <!-- Main Responsive -->
+        <link rel="stylesheet" href="{% static 'publico/css/responsive.css'%}">
+		
+		
+		<!-- Modernizer Script for old Browsers -->
+        <script src="{% static 'publico/js/vendor/modernizr-2.6.2.min.js'%}"></script>
+		
+        <link rel="icon" href="{% static 'icono/iconoW.ico'%}">
+    </head>
+	
+    <body>
+
+        <!--
+        Fixed Navigation
+        ==================================== -->
+        <header id="navigation" class="navbar-fixed-top">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- /responsive nav button -->
+
+                    <!-- logo -->
+                    <h1 class="navbar-brand">
+                        <a href="#body">
+                            <img src="{% static 'wiiver/img/logoW.png'%}" alt="Kasper Logo">
+                        </a>
+                    </h1>
+                    <!-- /logo -->
+
+                    </div>
+
+                    <!-- main nav -->
+                    <nav class="collapse navigation navbar-collapse navbar-right" role="navigation">
+                        <ul id="nav" class="nav navbar-nav">
+                            <li class="current"><a href="#">Inicio</a></li>
+                            <li><a href="#service">Servicios</a></li>
+                           <!-- <li><a href="#portfolio">potfolio</a></li>
+                            <li><a href="#about">About</a></li>
+                            --><li><a href="#pricing">Internet </a></li>
+                            <li><a href="#contact">Contacto</a></li>
+                            <li><a href="{% url 'web.views.iniciar_sesion'%}">Iniciar sesi&oacute;n </a></li>
+                        </ul>
+                    </nav>
+                    <!-- /main nav -->
+                </div>
+
+            </div>
+        </header>
+        <!--
+        End Fixed Navigation
+        ==================================== -->
+
+
+        <!--
+        Home Slider
+        ==================================== -->
+        <section id="home">     
+            <div id="home-carousel" class="carousel slide" data-interval="false">
+                <ol class="carousel-indicators">
+                    <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#home-carousel" data-slide-to="1"></li>
+                    <li data-target="#home-carousel" data-slide-to="2"></li>
+                </ol>
+                <!--/.carousel-indicators-->
+
+                <div class="carousel-inner">
+
+                    <div class="item active"  style="background-image: url('{% static 'wiiver/img/slider/bg1.png'%}')" >
+                        <div class="carousel-caption">
+                            <div class="animated bounceInRight">
+                                <h2>&#161;Red WIIVER&#33;<br>&#161;La tecnolog&iacute;a llega con WIIVER&#33;</h2>
+                                <p>Conectando a pueblos y comunidades en la zona centro del estado de Veracruz, apoyando el desarrollo y la comunicaci&oacute;n de las zonas rurales.</p>
+                            </div>
+                        </div>
+                    </div>              
+
+                    <div class="item" style="background-image: url('{% static 'wiiver/img/slider/bg2.png'%}')">                
+                        <div class="carousel-caption">
+                            <div class="animated bounceInDown">
+                                <h2>Radio Enlaces <br>Banda ancha</h2>
+                                <p>Desarrollo de Radio Enlaces privados y p&uacute;blicos con el asesoramiento y ayuda para su administraci&oacute;n. Utilizando los mejores equipos y la tecnología mas apropiada, adecuada para cada proyecto.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item" style="background-image: url('{% static 'wiiver/img/slider/bg3.png'%}')">                 
+                         <div class="carousel-caption">
+                            <div class="animated bounceInUp">
+                                <h2>Mantente conectado<br>&#161;Contrata Internet&#33;</h2>
+                                <p>Renta el servicio de Internet a plazos fijos, con la mejor red para mantenerte siempre conectado con tus seres queridos, trabajo o escuela. No te quedes incomunicado nunca mas.  </p> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.carousel-inner-->
+                <nav id="nav-arrows" class="nav-arrows hidden-xs hidden-sm visible-md visible-lg">
+                    <a class="sl-prev hidden-xs" href="#home-carousel" data-slide="prev">
+                        <i class="fa fa-angle-left fa-3x"></i>
+                    </a>
+                    <a class="sl-next" href="#home-carousel" data-slide="next">
+                        <i class="fa fa-angle-right fa-3x"></i>
+                    </a>
+                </nav>
+
+            </div>
+        </section>
+        <!--
+        End #home Slider
+        ========================== -->
+
+        
+        <!--
+        #service
+        ========================== -->
+        <section id="service">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title text-center wow fadeInDown">
+                            <h2>Servicios</h2>    
+                            <p>WIIVER pone a su disposici&oacute;n los siguientes servicios en la zona centro del estado de Veracruz.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-6 col-sm-12 wow fadeInLeft">
+                        <div class="media">
+                            <a href="#" class="pull-left">
+                                <img src="{% static 'wiiver/img/icons/monitor.png'%}" class="media-object" alt="Monitor">
+                            </a>
+                            <div class="media-body">
+                                <h3>Servicio de internet.</h3>
+                                <p>WIIVER pone a la venta paquetes de internet para regiones alejadas de la zona urbana. Contando con la mejor cobertura y calidad de servicio.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="media">
+                            <a href="#" class="pull-left">
+                                <img src="{% static 'wiiver/img/icons/cog.png'%}" alt="Cog">
+                            </a>
+                            <div class="media-body">
+                                <h3>Radio enlaces</h3>
+                                <p>Instalaci&oacute;n de radio enlaces para implementar servicios de comunicaci&oacute;n inal&aacute;mbrica, con distancias de hasta 30 kil&oacute;metros, utilizando la mejor tecnolog&iacute;a.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 wow fadeInLeft">
+                        <div class="media">
+                            <a href="#" class="pull-left">
+                                <img src="{% static 'wiiver/img/icons/ruler.png'%}" alt="Ruler">
+                            </a>
+                            <div class="media-body">
+                                <h3>Instalaci&oacute;n de red cableada </h3>
+                                <p>Instalaci&oacute;n de red cableada para pequeñas, mediana y grandes empresas, tel&eacute;fonos IP, c&aacute;maras de video vigilancia, conmutadores, etc. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="media">
+                            <a href="#" class="pull-left">
+                                <img src="{% static 'wiiver/img/icons/caja.png'%}" alt="Camera">
+                            </a>
+                            <div class="media-body">
+                                <h3>Venta de productos inal&aacute;mbricos</h3>
+                                <p>WIIVER tambi&eacute;n pone a su disposici&oacute;n, la venta productos inal&aacute;mbricos bajo pedido, incorporando a su venta tecnolog&iacute;a Ubiquiti, TP Link y Mikrotik.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- end .row -->
+            </div> <!-- end .container -->
+        </section>
+        
+        <!--#pricing
+        ========================== -->
+        <section id="pricing">
+            <div class="container">
+                <div class="row">
+
+                    <div class="section-title text-center wow fadeInUp">
+                        <h2>Internet</h2>    
+                        <p>En la siguiente tabla se muestran los costos del servicio de internet y la informaci&oacute;n de cada paquete.</p>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp">
+                        <div class="pricing-table text-center">
+                            <div class="price">
+                                <span class="plan">WIIVER B&Aacute;SICO</span>
+                                <span class="value"><small>$</small><strong>300</strong>/Al mes</span>
+                            </div>
+                            <ul class="text-center">
+                                <li>2 Megas de velocidad</li>
+                                <li>Feature N0 2</li>
+                                <li>Feature N0 3</li>
+                                <li>Feature N0 4</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-price">&iexcl;Contrata ahora&#33;</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="pricing-table text-center">
+                            <div class="price">
+                                <span class="plan">WIIVER PREMIUM </span>
+                                <span class="value"><small>$</small><strong>400</strong>/Al mes</span>
+                            </div>
+                            <ul class="text-center">
+                                <li>3 Megas de velocidad</li>
+                                <li>Feature N0 2</li>
+                                <li>Feature N0 3</li>
+                                <li>Feature N0 4</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-price">&iexcl;Contrata ahora&#33;</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="pricing-table text-center">
+                            <div class="price">
+                                <span class="plan">WIIVER PRO</span>
+                                <span class="value"><small>$</small><strong>500</strong>/Al mes</span>
+                            </div>
+                            <ul class="text-center">
+                                <li>4 Megas de velocidad</li>
+                                <li>Feature N0 2</li>
+                                <li>Feature N0 3</li>
+                                <li>Feature N0 4</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-price">&iexcl;Contrata ahora&#33;</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.9s">
+                        <div class="pricing-table text-center">
+                            <div class="price">
+                                <span class="plan">WIIVER Mas </span>
+                                <span class="value"><small>$</small><strong>100</strong>/ Mas Al mes</span>
+                            </div>
+                            <ul class="text-center">
+                                <li>1 Mega mas de velocidad</li>
+                                <li>Feature N0 2</li>
+                                <li>Feature N0 3</li>
+                                <li>Feature N0 4</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-price">&iexcl;Contrata ahora&#33;</a>
+                        </div>
+                    </div>
+                </div>
+               <!-- <div class="row">
+                    <div class="col-md-12 wow fadeInUp">
+                        <div class="special-plan text-center">
+                            <p>Contact us if you have special request</p>
+                            <a href="#" class="btn btn-blue">Contact Us</a>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </section>
+        <!--
+        End #pricing
+        ========================== -->
+
+
+        <!--
+        #subscribe
+        ========================== -->
+       <!-- <section id="subscribe">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-7 wow fadeInLeft">
+                        <form action="#" method="post" class="subscription-form">
+                            <i class="fa fa-envelope-o fa-lg"></i>
+                            <input type="email" name="subscribe" class="subscribe" placeholder="YOUR MAIL" required="">
+                            <input type="submit" value="SUBSCRIBE" id="mail-submit">
+                        </form>
+                    </div>
+
+                    <div class="col-md-4 text-left wow fadeInRight">
+                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blan dit aliquet elit, eget tincidunt.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
+        End #subscribe
+        ========================== -->
+
+
+        <!--
+        #contact
+        ========================== -->
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+
+                    <div class="section-title text-center wow fadeInDown">
+                        <h2>Contacto</h2>
+                        <p><h4>WIIVER pone a su disposici&oacute;n la secci&oacute;n de contacto. Manteni&eacute;ndose en servicio en horario de oficina de 9 am. a 4pm.</h4></p>
+                    </div>
+                    
+                    <div class="col-md-8 col-sm-9 wow fadeInLeft">
+                        <div class="contact-form clearfix">
+                            <center><div>
+                                <!-- Do not change the code! -->
+                                <a id="foxyform_embed_link_306102" href="http://es.foxyform.com/"></a>
+                                <script type="text/javascript">
+                                (function(d, t){
+                                   var g = d.createElement(t),
+                                       s = d.getElementsByTagName(t)[0];
+                                   g.src = "http://es.foxyform.com/js.php?id=306102&sec_hash=90fffc051ed&width=350px";
+                                   s.parentNode.insertBefore(g, s);
+                                }(document, "script"));
+                                </script>
+                                <!-- Do not change the code! -->
+                            </div></center>
+                        </div> <!-- end .contact-form -->
+                    </div> <!-- .col-md-8 -->
+
+                    <div class="col-md-4 col-sm-3 wow fadeInRight">
+                        <div class="contact-details">
+                            <span>Comunícate con nosotros</span>
+                            <p>271-706-5265 <br> <br> 271-712-07-58</p>
+                        </div> <!-- end .contact-details -->
+
+                        
+                    </div> <!-- .col-md-4 -->
+
+                </div>
+            </div>
+        </section>
+        <!--
+        End #contact
+        ========================== -->
+
+        <!--
+        #footer
+        ========================== -->
+        <footer id="footer" class="text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div class="footer-logo wow fadeInDown">
+                            <img src="{% static 'wiiver/img/logoW.png'%}" alt="logo">
+                        </div>
+
+                        <div class="footer-social wow fadeInUp">
+                            <h3>Visita nuestras redes sociales</h3>
+                            <ul class="text-center list-inline">
+                                <li><a href="https://www.facebook.com/Wiiver-1453596181616998/?ref=settings"><i class="fa fa-facebook fa-lg"></i></a></li>
+                                <li><a href="http://goo.gl/hUfpSB"><i class="fa fa-twitter fa-lg"></i></a></li>
+                                <li><a href="https://plus.google.com/110127200189729158076"><i class="fa fa-google-plus fa-lg"></i></a></li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="copyright">
+                           
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--
+        JavaScripts
+        ========================== -->
+        
+        <!-- main jQuery -->
+        <script src="{% static 'publico/js/vendor/jquery-1.11.1.min.js'%}"></script>
+        <!-- Bootstrap -->
+        <script src="{% static 'publico/js/bootstrap.min.js'%}"></script>
+        <!-- jquery.nav -->
+        <script src="{% static 'publico/js/jquery.nav.js'%}"></script>
+        <!-- Portfolio Filtering -->
+        <script src="{% static 'publico/js/jquery.mixitup.min.js'%}"></script>
+        <!-- Fancybox -->
+        <script src="{% static 'publico/js/jquery.fancybox.pack.js'%}"></script>
+        <!-- Parallax sections -->
+        <script src="{% static 'publico/js/jquery.parallax-1.1.3.js'%}"></script>
+        <!-- jQuery Appear -->
+        <script src="{% static 'publico/js/jquery.appear.js'%}"></script>
+        <!-- countTo -->
+        <script src="{% static 'publico/js/jquery-countTo.js'%}"></script>
+        <!-- owl carousel -->
+        <script src="{% static 'publico/js/owl.carousel.min.js'%}"></script>
+        <!-- WOW script -->
+        <script src="{% static 'publico/js/wow.min.js'%}"></script>
+        <!-- theme custom scripts -->
+        <script src="{% static 'publico/js/main.js'%}"></script>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+{% extends "base4.html" %}
+{% load staticfiles %}
+
+{% block title %}
+Registrar bit&aacute;cora
+{% endblock %}
+
+{% block cuerpo %}
+
+<style type="text/css">
+	td{
+		color: #000;
+	}
+</style>
+
+ <h1>Registro de bit&aacute;cora</h1>
+<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<center>
+			<table  style="border-radius: 15px; border-collapse: separate;
+  							border-spacing:  5px 15px;">
+				<tbody border="2px">
+						<tr >
+							<td >&nbsp;&nbsp;Fecha:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							<td>{{bitacoraForm.Fecha}}</td>
+							<td>&nbsp;Actividades:&nbsp;&nbsp;&nbsp;</td>
+							<td>{{bitacoraForm.Actividades}}</td>
+						</tr>
+						<tr>
+							<td>&nbsp;&nbsp;Beneficios:</td>
+							<td>{{bitacoraForm.Beneficios}}</td> 
+							<td>Empleado Responsable:</td>
+							<td>{{bitacoraForm.Nombre}}</td>
+						</tr>
+						<tr>
+							<td>&nbsp;&nbsp;Descripcion:</td>
+							<td>{{bitacoraForm.Descripcion}}</td>
+						</tr>
+						
+						{{usuario_form.last_login.as_hidden}}
+				{{usuario_form.date_joined.as_hidden}}
+					</tbody>
+			</table>
+
+			</center>
+			</br>
+			
+				
+				<button type="submit" class="btn btn-success">
+    <span class="glyphicon glyphicon-floppy-saved"></span> Registrar
+</button>
+
+
+					
+				
+			
+		</form>
+
+
+
+{% endblock cuerpo%}

@@ -1,0 +1,62 @@
+{% extends "base4.html" %}
+{% load staticfiles %}
+{% block title %}Inicio de Sesion{%endblock title%}
+{% block titletablex %}Inicio de Sesi&oacute;n{% endblock titletablex %}
+{% block titletable %}
+
+<!--<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+		<style type="text/css">
+		#formCen{
+			text-align: center;
+		}
+</style>
+<div id = formCen>
+	<h3><strong></strong></h3>
+	<form action="" method="POST">{% csrf_token %}
+		{{formulario}}
+		</br><input type="submit" value="Iniciar">
+	</form>
+</div>-->
+
+<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<center>
+			<table  style="border-radius: 15px; border-collapse: separate;
+  							border-spacing:  5px 15px;">
+				<tbody border="2px">
+						<tr >
+							<td >&nbsp;&nbsp;Nombre de usuario:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							<td>{{formulario.username}}</td>
+						</tr>
+						<tr>
+							<td>&nbsp;Contraseña:&nbsp;&nbsp;&nbsp;</td>
+							<td>{{formulario.password}}</td>
+						</tr>
+						
+						{{usuario_form.last_login.as_hidden}}
+				{{usuario_form.date_joined.as_hidden}}
+					</tbody>
+			</table>
+
+			</center>
+			</br>
+			
+				
+<button type="submit" class="btn btn-success" value="Iniciar"><span class="glyphicon glyphicon-floppy-saved">Iniciar</button>
+
+					
+				
+			
+		</form>
+
+
+{% endblock titletable %}
+{% block cuerpo %}
+
+			
+{% endblock cuerpo %}
+     {%block otrastablas%}{%endblock otrastablas%}
+     {%block otrastablas2%}{%endblock otrastablas2%}
+	{%block otrastablas3%}{%endblock otrastablas3%}
+

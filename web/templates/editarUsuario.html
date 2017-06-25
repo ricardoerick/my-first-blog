@@ -1,0 +1,94 @@
+{% extends "base4.html" %}
+{% load staticfiles %}
+
+{% block title %}
+Usuarios
+{% endblock %}
+
+{% block cuerpo %}
+
+
+<link rel='stylesheet' href='{% static 'css/jqueryui.css' %}' type='text/css'>
+            <link rel='stylesheet' href='{% static 'css/jquery.min.css' %}' type='text/css'>
+            <script src="{% static 'js/jquery.min.js' %}"></script>
+            <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+            <script src="{% static 'js/dataTables.jqueryui.min.js' %}"></script>
+            <script src="{% static 'js/jquery.js' %}"></script>
+            <script src="{% static 'js/jquery.dataTables.js' %}"></script>
+            <script src="{% static 'js/bootstrap.min.js' %}"></script>
+            <script type="text/javascript" charset="utf-8">
+                $(document).ready(function() {
+                  $('#example').dataTable();
+                });
+            </script>
+
+
+
+         
+          <h1>Editor de Usuario</h1>
+          
+      <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <center>
+      <tbody >
+            <tr >
+              <td >&nbsp;&nbsp;Nombre de Usuario:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td>{{formulario.username}}</td>
+            
+              <td>&nbsp;Correo Electr&oacute;nico:&nbsp;&nbsp;&nbsp;</td>
+              <td>{{formulario.email}}</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;Contrase&ntilde;a:</td>
+              <td>{{formulario.password}}</td> 
+              
+              <td>Nombre:</td>
+              <td>{{formulario.Nombre}}</td>
+            </tr>
+            <tr>
+              <!--<td>&nbsp;Apellido:</td>
+              <td>{{usuario_form.last_name}}</td>
+              <td></td>
+              <td>NombreUsuario</td>
+              <td>{{usuario_form.Nombre}}</td>-->
+            </tr>
+            <tr>
+              <td>&nbsp;Apellido Paterno:</td>
+              <td>{{formulario.ApellidoPaterno}}</td>
+              
+              <td>Apellido Materno:</td>
+              <td>{{formulario.ApellidoMaterno}}</td>
+            </tr>
+            <tr>
+              <td>Numero de Telefono:</td>
+              <td>{{formulario.NumeroTelefono}}</td>
+              
+              <td>Direcci&oacute;n:</td>
+              <td>{{formulario.Direccion}}</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;Municipio:</td>
+              <td>{{formulario.Municipio}}</td>
+              
+              <td>Tipo de Usuario:</td>
+              <td>{{formulario.tipo_Empleado}}</td>
+            </tr>
+            
+            
+            {{usuario_form.last_login.as_hidden}}
+        {{usuario_form.date_joined.as_hidden}}
+          </tbody>
+      </table>
+      </center>
+      </br>
+      
+        
+        <button type="submit" class="btn btn-success">
+    <span class="glyphicon glyphicon-floppy-saved"></span> Registrar
+</button>
+
+          
+        
+      
+    </form>
+{% endblock%}

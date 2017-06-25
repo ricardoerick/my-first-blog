@@ -1,0 +1,70 @@
+{% extends "base4.html" %}
+{% load staticfiles %}
+
+{% block title %}
+Taller
+{% endblock %}
+
+{% block cuerpo %}
+
+{% if user.is_authenticated  and user.is_superuser == 1 or user.tipo_Empleado == "1" %}
+
+<link rel='stylesheet' href='{% static 'css/jqueryui.css' %}' type='text/css'>
+            <link rel='stylesheet' href='{% static 'css/jquery.min.css' %}' type='text/css'>
+            <script src="{% static 'js/jquery.min.js' %}"></script>
+            <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+            <script src="{% static 'js/dataTables.jqueryui.min.js' %}"></script>
+            <script src="{% static 'js/jquery.js' %}"></script>
+            <script src="{% static 'js/jquery.dataTables.js' %}"></script>
+            <script src="{% static 'js/bootstrap.min.js' %}"></script>
+            <script type="text/javascript" charset="utf-8">
+                $(document).ready(function() {
+                  $('#example').dataTable();
+                });
+            </script>
+
+
+<div align="right">
+{% block titletablex %}<a href="{% url 'web.views.agregar_taller' %}" class="btn btn-success">Agregar <span class="glyphicon glyphicon-plus"><a href="{% url 'web.views.taller' activo=0%}" class="btn btn-danger">Inactivos <span class="glyphicon glyphicon-minus-sign"></span></a><a href="{% url 'web.views.taller' activo=1%}" class="btn btn-info" >Activos <span class="glyphicon glyphicon-ok"></span></a>{% endblock titletablex %} 
+     </div>   
+         
+          
+          <h1>Servicios de Taller</h1>
+           <table cellpadding="1" cellspacing="1" border="0" id="example" class="display">
+             <thead>
+              <tr>
+               <th style="color; #fff;">Fecha de Entrada</th>
+               <th>Fecha de Salida</th>
+               <th>Descripcion</th>
+               <th>Costo</th>
+               <th>Placa</th>
+               <th>Opciones</th>
+              </tr>  
+             </thead>
+
+             <tbody>
+              {% for p in taller %}      <!--esto es de vista-->
+              <tr>
+                <td>{{ p.FechaInicio}}</td>
+                <td>{{ p.FechaFin}}</td>
+                <td>{{ p.Descripcion}}</td>
+                <td>{{ p.Costo}}</td>
+                <td>{{ p.Placa}}</td>
+                <td>
+                  <a href="{% url 'web.views.editar_taller' id_taller=p.id%}" class="btn btn-info">Editar</a>
+                  {% if p.Estatus == 1 %}
+                    <a href="{%  url 'web.views.eliminar_taller' id_taller=p.id %}" onclick="return confirm('¿Estás seguro que deseas editar estos datos?');" class="btn btn-danger">Borrar </a>
+                  {% else %}
+                    <a href="{% url 'web.views.reactivarTaller' id_taller=p.id%}" onclick="return confirm('¿Estás seguro que deseas reactivar estos datos?');" class="btn btn-danger">Activar </a>
+                  {% endif %}                  
+                </td>
+              </tr>
+
+              {% empty %}
+              <tr><td colspan="6"><center> Sin Datos</center></td></tr>
+              {% endfor %}
+             </tbody>
+            </table><br>
+             <center><a href="{% url 'pdfTalleres' %}" class="btn btn-info" > Generar reporte <span class="glyphicon glyphicon-ok"></span></a></center>
+             {% endif%}
+{% endblock%}

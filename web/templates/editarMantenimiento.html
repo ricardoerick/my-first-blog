@@ -1,0 +1,71 @@
+{% extends "base4.html" %}
+{% load staticfiles %}
+
+{% block title %}
+Bitacora
+{% endblock %}
+
+{% block cuerpo %}
+
+
+<link rel='stylesheet' href='{% static 'css/jqueryui.css' %}' type='text/css'>
+            <link rel='stylesheet' href='{% static 'css/jquery.min.css' %}' type='text/css'>
+            <script src="{% static 'js/jquery.min.js' %}"></script>
+            <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+            <script src="{% static 'js/dataTables.jqueryui.min.js' %}"></script>
+            <script src="{% static 'js/jquery.js' %}"></script>
+            <script src="{% static 'js/jquery.dataTables.js' %}"></script>
+            <script src="{% static 'js/bootstrap.min.js' %}"></script>
+            <script type="text/javascript" charset="utf-8">
+                $(document).ready(function() {
+                  $('#example').dataTable();
+                });
+            </script>
+
+
+
+         
+          <h1>Editor de mantenimiento</h1>
+          
+      <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <center>
+      <table  style="border-radius: 15px; border-collapse: separate;
+                border-spacing:  5px 15px;">
+        <tbody>
+          <tr >
+              <td >&nbsp;&nbsp;Fecha:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td>{{formulario.Fecha}}</td>
+              
+              <!--<td>&nbsp;Costo:&nbsp;&nbsp;&nbsp;</td>
+              <td>${{mantenimientoForm.Costo}}</td>
+              --><td>costo:</td>
+              <td>{{formulario.Costo}}</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;Empleado Responsable:</td>
+              <td>{{formulario.Nombre}}</td> 
+              
+              <td>Descripcion:</td>
+              <td>{{formulario.Descripcion}}</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;Empleado Responsable:</td>
+              <td>{{formulario.NombreCliente}}</td>
+            </tr>
+        
+        </tbody>
+      </table>
+      </center>
+      </br>
+      
+        
+        <button type="submit" class="btn btn-success">
+    <span class="glyphicon glyphicon-floppy-saved"></span> Registrar
+</button>
+
+          
+        
+      
+    </form>
+{% endblock%}

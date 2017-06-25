@@ -1,0 +1,79 @@
+{% extends "base4.html" %}
+{% load staticfiles %}
+
+{% block title %}
+Clientes
+{% endblock %}
+
+{% block cuerpo %}
+
+
+<link rel='stylesheet' href='{% static 'css/jqueryui.css' %}' type='text/css'>
+            <link rel='stylesheet' href='{% static 'css/jquery.min.css' %}' type='text/css'>
+            <script src="{% static 'js/jquery.min.js' %}"></script>
+            <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+            <script src="{% static 'js/dataTables.jqueryui.min.js' %}"></script>
+            <script src="{% static 'js/jquery.js' %}"></script>
+            <script src="{% static 'js/jquery.dataTables.js' %}"></script>
+            <script src="{% static 'js/bootstrap.min.js' %}"></script>
+            <script type="text/javascript" charset="utf-8">
+                $(document).ready(function() {
+                  $('#example').dataTable();
+                });
+            </script>
+
+
+
+         
+          <h1>Editor de Cliente</h1>
+          
+      <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <center>
+      <table  style="border-radius: 15px; border-collapse: separate;
+                border-spacing:  5px 15px;">
+        <tbody>
+          <tr>
+          <tr>
+            <td>Fecha de Inscripcion:</td>
+            <td>{{formulario.FechaInscripcion}}</td>
+            <td>&nbsp;&nbsp;Nombre del Cliente:</td>
+            <td>{{formulario.NombreCliente}}</td>
+          </tr>
+          <tr>
+            <td>Apellido Paterno:</td>
+            <td>{{formulario.ApellidoPaterno}}</td>
+            <td>&nbsp;&nbsp;Apellido Materno:</td>
+            <td>{{formulario.ApellidoMaterno}}</td>
+          </tr>
+          <tr>
+            <td>Direccion:</td>
+            <td>{{formulario.Direccion}}</td>
+            <td>&nbsp;&nbsp;Municipio:</td>
+            <td>{{formulario.Municipio}}</td>
+            
+          </tr>
+
+          <tr>
+            <td>Numero de telefono:</td>
+            <td>{{formulario.NumeroTelefono}}</td>
+            <td>&nbsp;&nbsp;Dia de Pago:</td>
+            <td>{{formulario.DiaPago}}</td>
+            
+          </tr>
+        
+        </tbody>
+      </table>
+      </center>
+      </br>
+      
+        
+        <button type="submit" class="btn btn-success">
+    <span class="glyphicon glyphicon-floppy-saved"></span> Registrar
+</button>
+
+          
+        
+      
+    </form>
+{% endblock%}

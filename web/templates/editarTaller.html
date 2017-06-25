@@ -1,0 +1,70 @@
+{% extends "base4.html" %}
+{% load staticfiles %}
+
+{% block title %}
+Bitacora
+{% endblock %}
+
+{% block cuerpo %}
+
+
+<link rel='stylesheet' href='{% static 'css/jqueryui.css' %}' type='text/css'>
+            <link rel='stylesheet' href='{% static 'css/jquery.min.css' %}' type='text/css'>
+            <script src="{% static 'js/jquery.min.js' %}"></script>
+            <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+            <script src="{% static 'js/dataTables.jqueryui.min.js' %}"></script>
+            <script src="{% static 'js/jquery.js' %}"></script>
+            <script src="{% static 'js/jquery.dataTables.js' %}"></script>
+            <script src="{% static 'js/bootstrap.min.js' %}"></script>
+            <script type="text/javascript" charset="utf-8">
+                $(document).ready(function() {
+                  $('#example').dataTable();
+                });
+            </script>
+
+
+<h1>Editor de taller</h1>
+         
+          
+          
+      <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <center>
+      <table  style="border-radius: 15px; border-collapse: separate;
+                border-spacing:  5px 15px;">
+        <tbody>
+          <tr >
+              <td >&nbsp;&nbsp;Fecha de Entrada:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td>{{formulario.FechaInicio}}</td>
+            
+              <td>&nbsp;Fecha de Salida:&nbsp;&nbsp;&nbsp;</td>
+              <td>{{formulario.FechaFin}}</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;Descripcion:</td>
+              <td>{{formulario.Descripcion}}</td> 
+              
+              <td>Costo :</td>
+              <td>{{formulario.Costo}}</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;Placa:</td>
+              <td>{{formulario.Placa}}</td>
+              
+            </tr>
+        
+        </tbody>
+      </table>
+      </center>
+      </br>
+      
+        
+        <button type="submit" class="btn btn-success">
+    <span class="glyphicon glyphicon-floppy-saved"></span> Registrar
+</button>
+
+          
+        
+      
+    </form>
+{% endblock%}

@@ -1,0 +1,182 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Menu</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="{% static 'res/estilos.css'%}">
+	<link rel="stylesheet" href="{% static 'res/fonts.css'%}">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="{% static 'res/main.js'%}"></script>
+
+
+
+
+
+	<link rel="stylesheet" href="{% static 'wiiver/css/font-awesome.min.css'%}" >
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="{% static 'wiiver/css/bootstrap.min.css'%}">
+        <!-- Fancybox -->
+        <link rel="stylesheet" href="{% static 'wiiver/css/jquery.fancybox.css'%}">
+        <!-- owl carousel -->
+        <link rel="stylesheet" href="{% static 'wiiver/css/owl.carousel.css'%}">
+        <!-- Animate -->
+        <link rel="stylesheet" href="{% static 'wiiver/css/animate.css'%}">
+        <!-- Main Stylesheet -->
+        <link rel="stylesheet" href="{% static 'wiiver/css/main.css'%}">
+        <!-- Main Responsive -->
+        <link rel="stylesheet" href="{% static 'wiiver/css/responsive.css'%}">
+
+        <!-- Modernizer Script for old Browsers -->
+        <script src="{% static 'wiiver/js/vendor/modernizr-2.6.2.min.js'%}"></script>
+
+
+        <!-- main jQuery -->
+        <script src="{% static 'wiiver/js/vendor/jquery-1.11.1.min.js'%}"></script>
+        <!-- Bootstrap -->
+        <script src="{% static 'wiiver/js/bootstrap.min.js'%}"></script>
+        <!-- jquery.nav -->
+        <script src="{% static 'wiiver/js/jquery.nav.js'%}"></script>
+        <!-- Portfolio Filtering -->
+        <script src="{% static 'wiiver/js/jquery.mixitup.min.js'%}"></script>
+        <!-- Fancybox -->
+        <script src="{% static 'wiiver/js/jquery.fancybox.pack.js'%}"></script>
+        <!-- Parallax sections -->
+        <script src="{% static 'wiiver/js/jquery.parallax-1.1.3.js'%}"></script>
+        <!-- jQuery Appear -->
+        <script src="{% static 'wiiver/js/jquery.appear.js'%}"></script>
+        <!-- countTo -->
+        <script src="{% static 'wiiver/js/jquery-countTo.js'%}"></script>
+        <!-- owl carousel -->
+        <script src="{% static 'wiiver/js/owl.carousel.min.js'%}"></script>
+        <!-- WOW script -->
+        <script src="{% static 'wiiver/js/wow.min.js'%}"></script>
+        <!-- theme custom scripts -->
+        <script src="{% static 'wiiver/js/main.js'%}"></script>
+
+       
+        <link rel='stylesheet' href="{% static 'web/wiiver/css/jqueryui.css' %}" type='text/css'>
+            <link rel='stylesheet' href="{% static 'wiiver/css/jquery.min.css' %}" type='text/css'>
+            <script src="{% static 'web/wiiver/js/jquery.min.js' %}"></script>
+            <script src="{% static 'wiiver/js/jquery.dataTables.min.js' %}"></script>
+            <script src="{% static 'wiiver/js/dataTables.jqueryui.min.js' %}"></script>
+            <script src="{% static 'wiiver/js/jquery.js' %}"></script>
+            <script src="{% static 'wiiver/js/jquery.dataTables.js' %}"></script> 
+    
+    
+        <!-- Modernizer Script for old Browsers -->
+        <script src="{% static 'wiiver/js/vendor/modernizr-2.6.2.min.js'%}"></script>
+        
+
+	<style type="text/css">
+  table { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
+
+a{
+	width: 
+	;
+	height: 
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #000;
+}
+</style>
+
+<link rel="icon" href="{% static 'icono/iconoW.ico'%}">
+</head>
+
+
+	
+
+<body style="background-color: #F7F3F3;">
+
+<header>
+        <div class="menu_bar">
+            <a href="#" class="bt-menu"><span class="icon-list2"></span>Menú</a>
+        </div>
+
+        <nav text-align:>
+            <ul><li>
+                        
+                            <h1><a href="{% url 'web.views.index'%}"><img src="{% static 'wiiver/img/logoW.png'%}" ></a></h1>
+                    </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/usuario/1""><i class="fa fa-fw fa-dashboard"></i> Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cliente/1"><i class="fa fa-fw fa-area-chart"></i> Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/mantenimiento/1"><i class="fa fa-fw fa-cogs"></i> Mantenimientos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/unidad/1"><i class="fa fa-fw fa-table"></i> Unidades</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/taller/1"><i class="fa fa-fw fa-table"></i> Taller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/combustible/1"><i class="fa fa-fw fa-table"></i> Combustible</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/bitacora/1"><i class="fa fa-fw fa-table"></i> Bitacoras</a>
+                </li>
+ {% if user.is_authenticated %}
+                             
+                <li  class="nav-item"><a class="nav-link" href="{% url 'web.views.cerrar_sesion'%}"><i class="fa fa-sign-out fa-fw"></i>Cerrar Sesi&oacute;n</a>
+                        </li>
+                        {% else %}
+                        <!--<li><a href="{% url 'web.views.iniciar_sesion'%}" style="color: #fff;""><i class="fa fa-sign-out fa-fw"></i>Iniciar Sesi&oacute;n</a>
+                        </li>-->
+{% endif %}
+                <!--<li class="nav-item">
+                    <a class="nav-link" href="{% url 'web.views.cerrar_sesion'%}" style="color: #fff;"><i class="fa fa-fw fa-sign-out"></i> Cerrar Sesi&oacute;n </a>
+                </li>-->
+            </ul>
+        </nav>
+    </header>
+
+
+    
+<br><br>
+		
+    	{% if user.is_authenticated %}
+        <h2>Bienvenido {{user.username|capfirst}}
+        </h2>{% else %}
+        {% endif %}
+        
+        {% block titletable %}{%endblock titletable%}
+        
+        {% block cuerpo %}
+        {%endblock cuerpo%}
+  
+
+
+
+	<script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% extends "base4.html" %}
+{% load staticfiles %}
+
+{% block title %}
+Registrar Unidad
+{% endblock %}
+
+{% block cuerpo %}
+
+
+
+         <h1>Registro de unidad</h1>
+
+
+<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<center>
+			<table  style="border-radius: 15px; border-collapse: separate;
+  							border-spacing:  5px 15px;">
+				<tbody border="2px">
+						<tr >
+							<td >&nbsp;&nbsp;Numero:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							<td>{{unidadForm.Numero}}</td>
+							<td>&nbsp;Placa:&nbsp;&nbsp;&nbsp;</td>
+							<td>{{unidadForm.Placa}}</td>
+						</tr>
+						<tr>
+							<td>&nbsp;&nbsp;Marca:</td>
+							<td>{{unidadForm.Marca}}</td>
+							<td>Modelo:</td>
+							<td>{{unidadForm.Modelo}}</td>
+						</tr>
+						<tr>
+							<td>&nbsp;&nbsp;Color:</td>
+							<td>{{unidadForm.Color}}</td>
+							<td>Conductor designado</td>
+							<td>{{unidadForm.Nombre}}</td>
+						</tr>
+					
+						
+						{{usuario_form.last_login.as_hidden}}
+				{{usuario_form.date_joined.as_hidden}}
+					</tbody>
+			</table>
+
+			</center>
+			</br>
+			
+				
+				<button type="submit" class="btn btn-success">
+    <span class="glyphicon glyphicon-floppy-saved"></span> Registrar
+</button>
+					
+				
+			
+		</form>
+
+
+
+{% endblock cuerpo%}

@@ -1,0 +1,59 @@
+{% extends "base4.html" %}
+{% load staticfiles %}
+
+{% block title %}
+Registrar Bitacora
+{% endblock %}
+
+{% block cuerpo %}
+
+
+      <h1>Registro de mantenimiento</h1>
+
+
+<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<center>
+			<table  style="border-radius: 15px; border-collapse: separate;
+  							border-spacing:  5px 15px;">
+				<tbody border="2px">
+						<tr >
+							<td >&nbsp;&nbsp;Fecha:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							<td>{{mantenimientoForm.Fecha}}</td>
+							
+							<!--<td>&nbsp;Costo:&nbsp;&nbsp;&nbsp;</td>
+							<td>${{mantenimientoForm.Costo}}</td>
+							--><td>costo:</td>
+							<td>{{mantenimientoForm.Costo}}</td>
+						</tr>
+						<tr>
+							<td>&nbsp;&nbsp;Empleado Responsable:</td>
+							<td>{{mantenimientoForm.Nombre}}</td> 
+							
+							<td>Descripcion:</td>
+							<td>{{mantenimientoForm.Descripcion}}</td>
+						</tr>
+						<tr>
+							<td>&nbsp;&nbsp;Nombre del Cliente:</td>
+							<td>{{mantenimientoForm.NombreCliente}}</td>
+						</tr>
+						
+					
+					</tbody>
+			</table>
+
+			</center>
+			</br>
+			
+				
+				<button type="submit" class="btn btn-success">
+    <span class="glyphicon glyphicon-floppy-saved"></span> Registrar
+</button>
+					
+				
+			
+		</form>
+
+
+
+{% endblock cuerpo%}

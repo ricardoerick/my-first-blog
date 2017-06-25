@@ -1,0 +1,56 @@
+{% extends "base4.html" %}
+{% load staticfiles %}
+
+{% block title %}
+Registrar Taller
+{% endblock %}
+
+{% block cuerpo %}
+
+
+         <h1>Registro de taller</h1>
+
+<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<center>
+			<table  style="border-radius: 15px; border-collapse: separate;
+  							border-spacing:  5px 15px;">
+				<tbody border="2px">
+						<tr >
+							<td >&nbsp;&nbsp;Fecha de Entrada:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							<td>{{tallerForm.FechaInicio}}</td>
+							<td>&nbsp;Fecha de Salida:&nbsp;&nbsp;&nbsp;</td>
+							<td>{{tallerForm.FechaFin}}</td>
+						</tr>
+						<tr>
+							<td>&nbsp;&nbsp;Descripcion:</td>
+							<td>{{tallerForm.Descripcion}}</td> 
+							<td>Costo :</td>
+							<td>{{tallerForm.Costo}}</td>
+						</tr>
+						<tr>
+							<td>&nbsp;&nbsp;Placa:</td>
+							<td>{{tallerForm.Placa}}</td>
+						</tr>
+						
+						
+						{{usuario_form.last_login.as_hidden}}
+				{{usuario_form.date_joined.as_hidden}}
+					</tbody>
+			</table>
+
+			</center>
+			</br>
+			
+				
+				<button type="submit" class="btn btn-success">
+    <span class="glyphicon glyphicon-floppy-saved"></span> Registrar
+</button>
+					
+				
+			
+		</form>
+
+
+
+{% endblock cuerpo%}

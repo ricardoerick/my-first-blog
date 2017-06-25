@@ -1,0 +1,54 @@
+{% extends "base4.html" %}
+{% load staticfiles %}
+
+{% block title %}
+Registrar Taller
+{% endblock %}
+
+{% block cuerpo %}
+
+
+         <h1>Registro de combustible</h1>
+
+
+<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<center>
+			<table  style="border-radius: 15px; border-collapse: separate;
+  							border-spacing:  5px 15px;">
+				<tbody border="2px">
+						<tr >
+							<td >&nbsp;&nbsp;Cantidad (Litros):&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							<td>{{combustibleForm.Cantidad}}</td>
+							
+							<td>&nbsp;Descripcion:&nbsp;&nbsp;&nbsp;</td>
+							<td>{{combustibleForm.Descripcion}}</td>
+						</tr>
+						<tr>
+							<td>&nbsp;&nbsp;Placa de Unidad:</td>
+							<td>{{combustibleForm.Placa}}</td> 
+							
+							<td>Empleado Responsable:</td>
+							<td>{{combustibleForm.Nombre}}</td>
+						</tr>
+						
+						{{usuario_form.last_login.as_hidden}}
+				{{usuario_form.date_joined.as_hidden}}
+					</tbody>
+			</table>
+
+			</center>
+			</br>
+			
+				
+				<button type="submit" class="btn btn-success">
+    <span class="glyphicon glyphicon-floppy-saved"></span> Registrar
+</button>
+					
+				
+			
+		</form>
+
+
+
+{% endblock cuerpo%}

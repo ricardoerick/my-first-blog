@@ -1,0 +1,65 @@
+{% extends "base4.html" %}
+{% load staticfiles %}
+
+{% block title %}
+Bitacora
+{% endblock %}
+
+{% block cuerpo %}
+
+
+<link rel='stylesheet' href='{% static 'css/jqueryui.css' %}' type='text/css'>
+            <link rel='stylesheet' href='{% static 'css/jquery.min.css' %}' type='text/css'>
+            <script src="{% static 'js/jquery.min.js' %}"></script>
+            <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+            <script src="{% static 'js/dataTables.jqueryui.min.js' %}"></script>
+            <script src="{% static 'js/jquery.js' %}"></script>
+            <script src="{% static 'js/jquery.dataTables.js' %}"></script>
+            <script src="{% static 'js/bootstrap.min.js' %}"></script>
+            <script type="text/javascript" charset="utf-8">
+                $(document).ready(function() {
+                  $('#example').dataTable();
+                });
+            </script>
+
+
+
+         <h1>Editor de combustible</h1>
+          
+          
+      <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <center>
+      <table  style="border-radius: 15px; border-collapse: separate;
+                border-spacing:  5px 15px;">
+        <tbody>
+          <tr >
+              <td >&nbsp;&nbsp;Cantidad (Litros):&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td>{{formulario.Cantidad}}</td>
+             
+              <td>&nbsp;Descripcion:&nbsp;&nbsp;&nbsp;</td>
+              <td>{{formulario.Descripcion}}</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;Placa de Unidad:</td>
+              <td>{{formulario.Placa}}</td> 
+              
+              <td>Empleado Responsable:</td>
+              <td>{{formulario.Nombre}}</td>
+            </tr>
+        
+        </tbody>
+      </table>
+      </center>
+      </br>
+      
+        
+        <button type="submit" class="btn btn-success">
+    <span class="glyphicon glyphicon-floppy-saved"></span> Registrar
+</button>
+
+          
+        
+      
+    </form>
+{% endblock%}
